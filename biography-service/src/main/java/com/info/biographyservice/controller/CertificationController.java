@@ -24,7 +24,7 @@ public class CertificationController {
     public ResponseEntity<List<Certifications>> getCertification() {
         log.info("Get Certification details Controller");
         List<Certifications> certifications = certificationService.getCertificationDetails();
-        return new ResponseEntity<>(certifications, HttpStatus.FOUND);
+        return new ResponseEntity<>(certifications, HttpStatus.OK);
     }
 
 }

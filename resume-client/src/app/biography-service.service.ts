@@ -1,5 +1,12 @@
+import { Summary } from './entity/Summary';
+import { Skill } from './entity/Skill';
+import { Education } from './entity/Education';
+import { Experience } from './entity/Experience';
+import { Certification } from './entity/Certification';
+import { Personal } from './entity/Personal';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,28 +17,28 @@ export class BiographyServiceService {
 
   constructor(private http:HttpClient) { }
 
-  public getSummaryDetails(){
-    return this.http.get(this.biographyServiceBaseURL+"/summary/summary-details");
+  public getSummaryDetails() : Observable<Summary>{
+    return this.http.get<Summary>(this.biographyServiceBaseURL+"/summary/summary-details");
   }
 
-  public getSkillByType(type){
-    return this.http.get(this.biographyServiceBaseURL + "/skill/skill-details/type/" + type);
+  public getSkillByType(type):Observable<Skill>{
+    return this.http.get<Skill>(this.biographyServiceBaseURL + "/skill/skill-details/type/" + type);
   }
 
-  public getPersonalDetails(){
-    return this.http.get(this.biographyServiceBaseURL+"/personal/personal-details");
+  public getPersonalDetails(): Observable<Personal>{
+    return this.http.get<Personal>(this.biographyServiceBaseURL+"/personal/personal-details");
   }
   
-  public getEducationDetails(){
-    return this.http.get(this.biographyServiceBaseURL+"/education/education-details");
+  public getEducationDetails() : Observable<Education>{
+    return this.http.get<Education>(this.biographyServiceBaseURL+"/education/education-details");
   }
   
-  public getExperienceDetails(){
-    return this.http.get(this.biographyServiceBaseURL+"/experience/experience-details");
+  public getExperienceDetails(): Observable<Experience> {
+    return this.http.get<Experience>(this.biographyServiceBaseURL+"/experience/experience-details");
   }
   
-  public getCertificationList(){
-    return this.http.get(this.biographyServiceBaseURL+"/certification/certification-details");
+  public getCertificationList() : Observable<Certification[]>{
+    return this.http.get<Certification[]>(this.biographyServiceBaseURL+"/certification/certification-details");
   }
   
 }

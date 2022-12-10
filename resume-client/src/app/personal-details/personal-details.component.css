@@ -4,6 +4,11 @@
     padding: 10px;
 }
 
+
+.pos {
+    text-align: left;   
+}
+
 img {
     height: 100px;
     circle: 100px;

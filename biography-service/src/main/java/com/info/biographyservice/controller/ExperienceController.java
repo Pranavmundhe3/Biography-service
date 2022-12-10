@@ -22,7 +22,7 @@ public class ExperienceController {
     public ResponseEntity<Experience> getExperience() {
         log.info("Get Experience details Controller");
         Experience experience = experienceService.getExperienceDetails();
-        return new ResponseEntity<>(experience, HttpStatus.FOUND);
+        return new ResponseEntity<>(experience, HttpStatus.OK);
     }
 
 

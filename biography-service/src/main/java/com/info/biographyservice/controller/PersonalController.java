@@ -22,7 +22,7 @@ public class PersonalController {
     public ResponseEntity<Personal> getPersonal() {
         log.info("Get Personal details Controller");
         Personal personalDetails = personalService.getPersonalDetails();
-        return new ResponseEntity<>(personalDetails, HttpStatus.FOUND);
+        return new ResponseEntity<>(personalDetails, HttpStatus.OK);
     }
 
 }

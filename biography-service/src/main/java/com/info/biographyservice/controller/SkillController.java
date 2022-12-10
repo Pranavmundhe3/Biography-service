@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins="http://localhost:4200/",allowedHeaders="*")
+@CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")
 @RestController
 @RequestMapping("/skill")
 @Slf4j
@@ -22,7 +22,7 @@ public class SkillController {
     public ResponseEntity<Skills> getskillDetailsByType(@PathVariable String type) {
         log.info("Get skill details by {} ", type );
         Skills skills = skillService.getskillDetailsByType(type);
-        return new ResponseEntity<>(skills, HttpStatus.FOUND);
+        return new ResponseEntity<>(skills, HttpStatus.OK);
     }
 
 }

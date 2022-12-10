@@ -13,7 +13,7 @@ const routes: Routes = [
    {path:"home",component:HomeComponent},
    {path:"skills",component:SkillsComponent},
    {path:"experience",component:ExperienceComponent},
-   {path:"personal-details",component:PersonalDetailsComponent},
+   {path:"about-me",component:PersonalDetailsComponent},
    {path:"contact-me",component:ContactMeComponent}
 ];
 

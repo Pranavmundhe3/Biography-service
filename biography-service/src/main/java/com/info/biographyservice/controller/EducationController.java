@@ -22,7 +22,7 @@ public class EducationController {
     public ResponseEntity<Education> getEducation() {
         log.info("Get Education details Controller");
         Education educationDetails = educationService.getEducationDetails();
-        return new ResponseEntity<>(educationDetails, HttpStatus.FOUND);
+        return new ResponseEntity<>(educationDetails, HttpStatus.OK);
     }
 
 }

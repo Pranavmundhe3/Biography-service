@@ -1,3 +1,4 @@
+import { Skill } from './../entity/Skill';
 import { Component, OnInit } from '@angular/core';
 import { BiographyServiceService } from './../biography-service.service';
 
@@ -12,38 +13,70 @@ export class SkillsComponent implements OnInit {
   panelOpenStateFrame = false;
   panelOpenStateTool = false;
   panelOpenStateOther = false;
-  skillDetails: any;
+  
+  toolSkillDetails: Skill;
+  tecSkillDetails: Skill;
+  frameSkillDetails: Skill;
+  otherSkillDetails: Skill;
 
-  constructor(private biographyServiceService: BiographyServiceService) { }
+
+  
+
+  constructor(private biographyServiceService: BiographyServiceService) { 
+  }
 
   ngOnInit(): void {
   }
 
   getSkillsByTech() {
     this.panelOpenStateTech = true;
-    this.getSkillsByType("Technologies");
+    this.getSkillsByTec();
+  }
+
+  
+  getSkillsByTec() {
+    this.biographyServiceService.getSkillByType("Technologies").subscribe((data) => {
+      this.tecSkillDetails = data;
+      console.log(this.tecSkillDetails);
+    });
   }
 
   getSkillsByFramework() {
     this.panelOpenStateFrame = true;
-    this.getSkillsByType("Frameworks");
+    this.getSkillsByFrame();
   }
+
+  
+  getSkillsByFrame() {
+    this.biographyServiceService.getSkillByType("Frameworks").subscribe((data) => {
+      this.frameSkillDetails = data;
+      console.log(this.frameSkillDetails);
+    });
+  }
+  
 
   getSkillsByTools() {
     this.panelOpenStateTool = true;
-    this.getSkillsByType("Tools");
+    this.getSkillsBytools();
   }
-  
-  getSkillsByOthers() {
-    this.panelOpenStateOther = true;
-    this.getSkillsByType("Technologies");
+    
+  getSkillsBytools() {
+    this.biographyServiceService.getSkillByType("Tools").subscribe((data) => {
+      this.toolSkillDetails = data;
+      console.log(this.toolSkillDetails);
+    });
   }
 
-  getSkillsByType(type) {
-    let skills = this.biographyServiceService.getSkillByType(type);
-    skills.subscribe((data) => {
-      this.skillDetails = data;
-      console.log(this.skillDetails);
+
+  getSkillsByOthers() {
+    this.panelOpenStateOther = true;
+    this.getSkillsByOther();
+  }
+
+  getSkillsByOther() {
+    this.biographyServiceService.getSkillByType("Others").subscribe((data) => {
+      this.otherSkillDetails = data;
+      console.log(this.otherSkillDetails);
     });
   }
 

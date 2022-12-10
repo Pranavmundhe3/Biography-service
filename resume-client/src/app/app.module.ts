@@ -12,8 +12,11 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BiographyServiceService } from './biography-service.service';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     MatExpansionModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [BiographyServiceService],
   bootstrap: [AppComponent]
