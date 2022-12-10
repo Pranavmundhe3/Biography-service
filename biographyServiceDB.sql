@@ -2,6 +2,8 @@ create database biographyService;
 use biographyService;
 
 
+
+
 ----------------
 
 INSERT INTO SKILLS VALUES ("JAVA 11,OOPS,JPA/Hibernate,RESTful web services,Microservices,Oracle SQL","Technologies");
