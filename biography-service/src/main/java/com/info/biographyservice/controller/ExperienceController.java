@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")
+@CrossOrigin(origins="http://resume-client-ui-jar.s3-website-us-east-1.amazonaws.com",allowedHeaders="*")
 @RestController
 @RequestMapping("/experience")
 @Slf4j

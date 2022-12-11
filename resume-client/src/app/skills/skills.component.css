@@ -11,6 +11,10 @@ img {
     border-radius: 50%;
 }
 
+.pos {
+    text-align: left;   
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;

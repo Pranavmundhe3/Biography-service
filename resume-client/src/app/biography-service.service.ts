@@ -14,31 +14,32 @@ import { Observable } from 'rxjs';
 export class BiographyServiceService {
 
   biographyServiceBaseURL = "http://localhost:8080";
+  biographyServiceAWSBaseURL = "http://pranavresumesite-env.eba-mdmqjdmy.us-east-1.elasticbeanstalk.com";
 
   constructor(private http:HttpClient) { }
 
   public getSummaryDetails() : Observable<Summary>{
-    return this.http.get<Summary>(this.biographyServiceBaseURL+"/summary/summary-details");
+    return this.http.get<Summary>(this.biographyServiceAWSBaseURL+"/summary/summary-details");
   }
 
   public getSkillByType(type):Observable<Skill>{
-    return this.http.get<Skill>(this.biographyServiceBaseURL + "/skill/skill-details/type/" + type);
+    return this.http.get<Skill>(this.biographyServiceAWSBaseURL + "/skill/skill-details/type/" + type);
   }
 
   public getPersonalDetails(): Observable<Personal>{
-    return this.http.get<Personal>(this.biographyServiceBaseURL+"/personal/personal-details");
+    return this.http.get<Personal>(this.biographyServiceAWSBaseURL+"/personal/personal-details");
   }
   
   public getEducationDetails() : Observable<Education>{
-    return this.http.get<Education>(this.biographyServiceBaseURL+"/education/education-details");
+    return this.http.get<Education>(this.biographyServiceAWSBaseURL+"/education/education-details");
   }
   
   public getExperienceDetails(): Observable<Experience> {
-    return this.http.get<Experience>(this.biographyServiceBaseURL+"/experience/experience-details");
+    return this.http.get<Experience>(this.biographyServiceAWSBaseURL+"/experience/experience-details");
   }
   
   public getCertificationList() : Observable<Certification[]>{
-    return this.http.get<Certification[]>(this.biographyServiceBaseURL+"/certification/certification-details");
+    return this.http.get<Certification[]>(this.biographyServiceAWSBaseURL+"/certification/certification-details");
   }
   
 }

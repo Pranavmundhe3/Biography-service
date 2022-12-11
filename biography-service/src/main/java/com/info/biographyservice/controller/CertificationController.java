@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")
+@CrossOrigin(origins="http://resume-client-ui-jar.s3-website-us-east-1.amazonaws.com",allowedHeaders="*")
 @RestController
 @RequestMapping("/certification")
 @Slf4j
