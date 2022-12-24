@@ -51,7 +51,13 @@ INSERT INTO biographyService.personal (.,.,.,) VALUES (1, "15th September 1998",
 
 -------------------------------
 
+Resources-
 
+Deployment- https://www.youtube.com/watch?v=q25jgAZTTsU
+
+CRUD-
 https://www.youtube.com/watch?v=IucFDX3RO9U
 https://www.youtube.com/watch?v=QV7ke4a7Lvc
+
+Angular Material-
 https://www.youtube.com/watch?v=lrVpUVydZwM&list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU&index=26
